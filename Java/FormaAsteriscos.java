@@ -27,19 +27,6 @@ public class FormaAsteriscos {
         return vertical;
     }
 
-    // public String lineaEle() {
-    // String formaEle = "";
-    // for (int i = 0; i < longitud - 1; i++) {
-    // formaEle = formaEle + "*\n";
-    // if (i == longitud - 2) {
-    // for (int j = 0; j < longitud; j++) {
-    // formaEle = formaEle + "* ";
-    // }
-    // }
-    // }
-    // return formaEle;
-    // }
-
     public String lineaEle() {
         String formaEle = "";
         setLongitud(longitud - 1);

@@ -24,5 +24,6 @@ public class Dado {
         for (int i = 1; i <= cantidadTiros; i++) {
             System.out.println("El tiro " + i + " sale: " + dado1.generarNumero());
         }
+        scanner.close();
     }
 }

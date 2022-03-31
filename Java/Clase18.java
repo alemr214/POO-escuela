@@ -24,6 +24,10 @@ public class Clase18 {
                 int opcion = scanner.nextInt();
                 if (opcion == 1) {
                     caballo.avanzar(numeroPasos);
+                    if (caballo.getNumeroPasos() >= numeroCaracteres - 10) {
+                        caballo.setNumeroPasos(0);
+                        caballo.avanzar(numeroCaracteres - 10);
+                    }
                 } else if (opcion == 2) {
                     caballo.retroceder(numeroPasos);
                 } else {

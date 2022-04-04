@@ -20,8 +20,12 @@ public class Caballo {
         return numeroPasos;
     }
 
+    public void setNumeroPasos(int numeroPasos) {
+        this.numeroPasos = numeroPasos;
+    }
+
     public void avanzar() {
-        int temporalAleatorio = (int) (Math.random() * 3) + 1;
+        int temporalAleatorio = (int) (Math.random() * 25) + 1;
         this.numeroPasos += temporalAleatorio;
     }
 

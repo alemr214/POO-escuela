@@ -1,5 +1,13 @@
 package mensaje;
 
+import com.twilio.Twilio;
+import com.twilio.converter.Promoter;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+
+import java.net.URI;
+import java.util.Arrays;
+
 public class MensajeAudio extends Mensaje {
     private String nombreAudio;
     private int tiempoAudio;
@@ -27,8 +35,13 @@ public class MensajeAudio extends Mensaje {
     }
 
     public void enviarAudio() {
-        System.out.println("Enviando audio a " + getDestinatario() + " con numero " + getNumeroTelefono()
-                + ": " + getnombreAudio() + " durante " + gettiempoAudio() + " segundos");
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+                new com.twilio.type.PhoneNumber("whatsapp:" + getNumeroTelefono()),
+                new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
+                "Audio").setMediaUrl(Arrays.asList(URI.create(getnombreAudio()))).create();
+
+        System.out.println(message.getSid());
     }
 
     public void grabarAudio() {
